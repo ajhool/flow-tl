@@ -13,7 +13,8 @@ const Post = ({title, body, startDate, endDate, postDate, media, tags, ...props 
     <Article {...props}>
       <Heading level={2}>{title + '(' + startDateStr + ')'}</Heading>
       <Paragraph>{body}</Paragraph>
-      <MediaItemsList list={media}></MediaItemsList>
+      <MediaItemList list={media}></MediaItemList>
+      <TagList list={tags}></TagList>
     </Article>
   )
 }

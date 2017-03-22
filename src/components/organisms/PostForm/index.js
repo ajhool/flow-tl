@@ -17,6 +17,10 @@ const PostForm = ({ handleSubmit, submitting }) => {
       <Field name="_csrf" type="hidden" component="input" />
       <Field name="title" label="Title" component={ReduxField} />
       <Field name="body" label="Body" type="textarea" component={ReduxField} />
+      <Field name="startDate" label="Start Date" component={ReduxField} />
+      <Field name="endDate" label="End Date" component={ReduxField} />
+      <Field name="media" label="Media" component={ReduxField} />
+      <Field name="tags" label="Tags" component={ReduxField} />
       <Button type="submit" disabled={submitting}>Create</Button>
     </Form>
   )
