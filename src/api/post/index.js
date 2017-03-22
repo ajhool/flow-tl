@@ -5,10 +5,10 @@ import { create, index, show, update, destroy } from './controller'
 import { schema } from './model'
 
 const router = new Router()
-const { title, body } = schema.tree
+const { title, body, startDate, endDate, postDate, media, tags } = schema.tree
 
 router.post('/',
-  bodymen({ title, body }),
+  bodymen({ title, body, startDate, endDate, postDate, media, tags }),
   create)
 
 router.get('/',
@@ -19,7 +19,7 @@ router.get('/:id',
   show)
 
 router.put('/:id',
-  bodymen({ title, body }),
+  bodymen({ title, body, startDate, endDate, postDate, media, tags }),
   update)
 
 router.delete('/:id',

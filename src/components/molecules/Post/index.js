@@ -1,18 +1,22 @@
 import React, { PropTypes } from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
 
 import { Heading, Paragraph } from 'components'
 
 const Article = styled.article``
 
-const Post = ({ title, body, ...props }) => {
+const Post = ({title, body, startDate, endDate, postDate, media, tags, ...props }) => {
+  const startDateStr = moment(startDate).format('MM-DD-YY, h:mm:ss a');
+
   return (
     <Article {...props}>
-      <Heading level={2}>{title}</Heading>
+      <Heading level={2}>{title + '(' + startDateStr + ')'}</Heading>
       <Paragraph>{body}</Paragraph>
     </Article>
   )
 }
+
 
 Post.propTypes = {
   title: PropTypes.string.isRequired,

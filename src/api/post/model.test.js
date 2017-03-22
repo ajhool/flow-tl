@@ -4,7 +4,7 @@ import '../../../test/db'
 let post
 
 beforeEach(async () => {
-  post = await Post.create({ title: 'test', body: 'test' })
+  post = await Post.create({ title: 'test', body: 'test', startDate: Date.now(), endDate: null, postDate: Date.now(), media: [{mediaType: 'LINK', infoBlob: {url: 'www.google.com'}}], tags: [{keyword: 'France', score: 15}]})
 })
 
 describe('view', () => {

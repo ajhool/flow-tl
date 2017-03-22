@@ -7,6 +7,29 @@ const postSchema = new Schema({
   body: {
     type: String,
   },
+  startDate: {
+    type: Date
+  },
+  endDate: {
+    type: Date
+  },
+  postDate: {
+    type: Date,
+    default: Date.now
+  }
+  media: [
+    {
+      mediaType: {type: String, default: 'UNKNOWN'},
+      name: {type: String, default: ''},
+      infoBlob: {type: Mixed, defualt: {}}
+    }
+  ],
+  tags: [
+    {
+      keyword: {type: String, default: ''},
+      score: {type: Number, default: 0 }
+    }
+  ]
 }, {
   timestamps: true,
 })
@@ -18,6 +41,11 @@ postSchema.methods = {
       id: this.id,
       title: this.title,
       body: this.body,
+      startDate: this.startDate,
+      endDate: this.endDate,
+      postDate: this.postDate,
+      media: this.media,
+      tags: this.tags,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
     }
