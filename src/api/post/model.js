@@ -19,9 +19,11 @@ const postSchema = new Schema({
   }
   media: [
     {
-      mediaType: {type: String, default: 'UNKNOWN'},
-      name: {type: String, default: ''},
-      infoBlob: {type: Mixed, defualt: {}}
+      title: String,
+      icon: String,
+      mediaLink: String,
+      agencyName: String,
+      agencyLink: String
     }
   ],
   tags: [
