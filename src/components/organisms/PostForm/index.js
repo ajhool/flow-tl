@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { Field } from 'redux-form'
 import styled from 'styled-components'
 
-import { ReduxField, Heading, Button } from 'components'
+import { ReduxField, Heading, Button, MediaItemInputsList, TagsInputsList } from 'components'
 
 const Form = styled.form`
   width: 100%;
@@ -19,8 +19,8 @@ const PostForm = ({ handleSubmit, submitting }) => {
       <Field name="body" label="Body" type="textarea" component={ReduxField} />
       <Field name="startDate" label="Start Date" component={ReduxField} />
       <Field name="endDate" label="End Date" component={ReduxField} />
-      {<MediaItemInputsList></MediaItemInputsList>}
-      {<TagsInputsList></TagsInputsList>}
+      {<MediaItemInputsList list={[]}></MediaItemInputsList>}
+      {<TagsInputsList list={[]}></TagsInputsList>}
       <Button type="submit" disabled={submitting}>Create</Button>
     </Form>
   )

@@ -10,8 +10,8 @@ const Form = styled.form`
   padding: 1rem;
 `
 
-const MediaItemInputs = (indexNumber, title, mediaLink, agencyName, agencyLink) => {
-  const arrayLabel = "mediaItems[item-"+indexNumber+"]"
+const MediaItemInputs = ({ indexNumber, title, mediaLink, agencyName, agencyLink }) => {
+  const arrayLabel = "media[item-"+indexNumber+"]"
   return (
     <div>
       <Field name={arrayLabel+"[title]"} label="Title" component={ReduxField} />
@@ -23,10 +23,10 @@ const MediaItemInputs = (indexNumber, title, mediaLink, agencyName, agencyLink) 
 }
 
 MediaItemInputs.propTypes = {
-  title: PropTypes.String,
-  mediaLink: PropTypes.String,
-  agencyName: PropTypes.String,
-  agencyLink: PropTypes.String
+  title: PropTypes.string,
+  mediaLink: PropTypes.string,
+  agencyName: PropTypes.string,
+  agencyLink: PropTypes.string
 }
 
 export default MediaItemInputs

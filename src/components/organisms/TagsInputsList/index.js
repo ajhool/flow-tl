@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import styled from 'styled-components'
 
-import { TagsInputs } from 'components'
+import { TagsInputs, Button } from 'components'
 
 const Wrapper = styled.div`
   & > * {
@@ -12,9 +12,12 @@ const Wrapper = styled.div`
 const TagsInputsList = ({ list, loading, ...props }) => {
   return (
     <Wrapper {...props}>
-      {list.map((tagInput, idx) => <TagsInputs key={'itemInputs-'+idx} indexNumber={idx} {...tagInput} />)}
-      <TagsInputs key={'itemInputs-'+list.length} indexNumber={list.length} {...tagInput} />
-      <Button>Add Media</Button>
+      {list.map((tagInput, idx) => (
+          <TagsInputs key={'itemInputs-'+idx} indexNumber={idx} {...tagInput} />
+        )
+      )}
+      <TagsInputs key={'itemInputs-'+list.length} indexNumber={list.length} />
+      <Button>Add Tag</Button>
     </Wrapper>
   )
 }

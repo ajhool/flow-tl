@@ -14,6 +14,7 @@ const MediaItemList = ({ list, loading, ...props }) => {
     <Wrapper {...props}>
       {loading && <div>Loading</div>}
       {
+        /*
         list.map(mediaItem => {
           switch(mediaItem.mediaType){
             case 'WEB_LINK':
@@ -24,7 +25,11 @@ const MediaItemList = ({ list, loading, ...props }) => {
             default:
               return null
           }
-        }
+        })
+        */
+        list.map(mediaItem => {
+          return (<MediaWebLink key={mediaItem.id} mediaItem {...mediaItem}></MediaWebLink>)
+        })
       }
     </Wrapper>
   )

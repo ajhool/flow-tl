@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import styled from 'styled-components'
 import moment from 'moment'
 
-import { Heading, Paragraph } from 'components'
+import { Heading, Paragraph, MediaItemList, TagList } from 'components'
 
 const Article = styled.article``
 

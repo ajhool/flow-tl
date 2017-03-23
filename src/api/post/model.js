@@ -16,7 +16,7 @@ const postSchema = new Schema({
   postDate: {
     type: Date,
     default: Date.now
-  }
+  },
   media: [
     {
       title: String,
