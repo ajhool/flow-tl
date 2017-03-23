@@ -2,6 +2,10 @@ import React, { PropTypes } from 'react'
 import { injectGlobal, ThemeProvider } from 'styled-components'
 import Helmet from 'react-helmet'
 
+import MuiThemeProvider from 'material-ui/styles/muiThemeProvider'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import muiTheme from 'components/themes/muiTheme'
+
 import theme from './themes/default'
 
 injectGlobal`
@@ -9,6 +13,8 @@ injectGlobal`
     margin: 0;
   }
 `
+
+injectTapEventPlugin()
 
 const App = ({ children }) => {
   return (
@@ -28,7 +34,9 @@ const App = ({ children }) => {
           { rel: 'icon', href: 'https://diegohaz.github.io/arc/icon.png' },
         ]}
       />
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </MuiThemeProvider>
     </div>
   )
 }

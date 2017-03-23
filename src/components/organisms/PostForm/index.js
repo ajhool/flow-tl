@@ -12,20 +12,7 @@ const Form = styled.form`
   padding: 1rem;
 `
 
-const PostForm = ({ handleSubmit, submitting }) => {
-
-  handleChangeStartDate = (event, date) => {
-    this.setState({
-      startDate: date,
-    });
-  }
-
-  handleChangeEndDate = (event, date) => {
-    this.setState({
-      endDate: date,
-    });
-  }
-
+const PostForm = ({ handleChangeStartDate, handleChangeEndDate, handleSubmit, submitting }) => {
   return (
     <Form method="POST" onSubmit={handleSubmit}>
       <Heading level={2}>Create a post</Heading>

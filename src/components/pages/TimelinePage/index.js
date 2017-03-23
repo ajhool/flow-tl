@@ -4,11 +4,11 @@ import Helmet from 'react-helmet'
 import { PageTemplate, Header, Footer, FilterBuilder } from 'components'
 import { PostForm, PostList } from 'containers'
 
-const TimelinePage = () => {
+const TimelinePage = ({filterList=[]}) => {
   return (
     <PageTemplate header={<Header />} footer={<Footer />}>
       <Helmet title="Timeline" />
-      <FilterBuilder list=["Main Story", "Secondary Key"]/>
+      <FilterBuilder list={filterList}/>
       <PostList limit={50} />
     </PageTemplate>
   )

@@ -7,6 +7,7 @@ import { createValidator, required } from 'services/validation'
 
 import { PostForm } from 'components'
 
+//TODO: Turn this container into a class so we can handle start date and end date, etc.
 const PostFormContainer = props => <PostForm {...props} />
 
 const onSubmit = (data, dispatch) => new Promise((resolve, reject) => {
@@ -23,6 +24,21 @@ const mapStateToProps = (state) => ({
     _csrf: fromForm.getCsrfToken(state),
   },
 })
+
+//TODO: Tie this into the PostForm component, above
+const handleChangeStartDate = (event, date) => {
+  this.setState({
+    startDate: date,
+  });
+}
+
+//TODO: Tie this into the PostForm component, above
+const handleChangeEndDate = (event, date) => {
+  this.setState({
+    endDate: date,
+  });
+}
+
 
 export const config = {
   form: 'PostForm',

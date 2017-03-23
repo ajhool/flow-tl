@@ -12,14 +12,14 @@ const Wrapper = styled.div`
 const FilterBuilder = ({ list, loading, ...props }) => {
   return (
     <Wrapper {...props}>
-      { list.map(filterItem => <Button>{filterItem}</Button>) }
+      { list.map(filterItem => <Button key={filterItem}>{filterItem}</Button>) }
+      <Button>Add Filter</Button>
     </Wrapper>
   )
 }
 
 FilterBuilder.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.object).isRequired,
-  loading: PropTypes.bool,
+  list: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
 export default FilterBuilder
