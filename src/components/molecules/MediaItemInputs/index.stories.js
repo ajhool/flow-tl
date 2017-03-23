@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
-import { PostForm } from 'containers'
+import { MediaItemInputs } from 'containers'
 
-storiesOf('PostForm', module)
+storiesOf('MediaItemInputs', module)
   .add('default', () => (
-    <PostForm />
+    <MediaItemInputs />
   ))

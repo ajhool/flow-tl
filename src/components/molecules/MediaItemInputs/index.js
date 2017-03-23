@@ -10,13 +10,14 @@ const Form = styled.form`
   padding: 1rem;
 `
 
-const MediaItemInputs = (title, mediaLink, agencyName, agencyLink) => {
+const MediaItemInputs = (indexNumber, title, mediaLink, agencyName, agencyLink) => {
+  const arrayLabel = "mediaItems[item-"+indexNumber+"]"
   return (
     <div>
-      <Field name="title" label="Title" component={ReduxField} />
-      <Field name="mediaLink" label="Webpage Url" component={ReduxField} />
-      <Field name="agencyName" label="News Agency Name" component={ReduxField} />
-      <Field name="agencyLink" label="News Agency Url" component={ReduxField} />
+      <Field name={arrayLabel+"[title]"} label="Title" component={ReduxField} />
+      <Field name={arrayLabel+"[mediaLink]"} label="Webpage Url" component={ReduxField} />
+      <Field name={arrayLabel+"[agencyName]"} label="News Agency Name" component={ReduxField} />
+      <Field name={arrayLabel+"[agencyLink]"} label="News Agency Url" component={ReduxField} />
     </div>
   )
 }
