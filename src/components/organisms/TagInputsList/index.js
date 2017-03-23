@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   }
 `
 
-const TagsInputsList = ({ list, loading, ...props }) => {
+const TagInputsList = ({ list, loading, ...props }) => {
   return (
     <Wrapper {...props}>
       {list.map((tagInput, idx) => (
@@ -23,9 +23,9 @@ const TagsInputsList = ({ list, loading, ...props }) => {
   )
 }
 
-TagsInputsList.propTypes = {
+TagInputsList.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object).isRequired,
   loading: PropTypes.bool,
 }
 
-export default TagsInputsList
+export default TagInputsList
