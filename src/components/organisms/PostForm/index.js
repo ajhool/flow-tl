@@ -19,8 +19,8 @@ const PostForm = ({ handleSubmit, submitting }) => {
       <Field name="body" label="Body" type="textarea" component={ReduxField} />
       <Field name="startDate" label="Start Date" component={ReduxField} />
       <Field name="endDate" label="End Date" component={ReduxField} />
-      <Field name="media" label="Media" component={ReduxField} />
-      <Field name="tags" label="Tags" component={ReduxField} />
+      {<MediaItemInputsList></MediaItemInputsList>}
+      {<TagsInputsList></TagsInputsList>}
       <Button type="submit" disabled={submitting}>Create</Button>
     </Form>
   )

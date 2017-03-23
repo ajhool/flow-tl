@@ -8,7 +8,15 @@ const router = new Router()
 const { title, body, startDate, endDate, postDate, media, tags } = schema.tree
 
 router.post('/',
-  bodymen({ title, body, startDate, endDate, postDate, media, tags }),
+  bodymen(
+    { title,
+      body,
+      startDate,
+      endDate,
+      postDate,
+      media,
+      tags
+    }),
   create)
 
 router.get('/',

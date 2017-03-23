@@ -2,7 +2,7 @@ const merge = require('lodash/merge')
 
 const browser = typeof window !== 'undefined'
 const ip = process.env.IP || '0.0.0.0'
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3003
 const basename = `/${process.env.PUBLIC_PATH || ''}`.replace('//', '/')
 
 const config = {

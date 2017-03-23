@@ -13,6 +13,7 @@ const MediaItemInputsList = ({ list, loading, ...props }) => {
   return (
     <Wrapper {...props}>
       {list.map((mediaItemInput, idx) => <MediaItemInputs key={'itemInputs-'+idx} indexNumber={idx} {...mediaItemInput} />)}
+      <MediaItemInputs key={'itemInputs-'+list.length} indexNumber={list.length} {...mediaItemInput} />
       <Button>Add Media</Button>
     </Wrapper>
   )
