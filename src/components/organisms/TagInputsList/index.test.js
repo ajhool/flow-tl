@@ -1,12 +1,12 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import TagsInputsList from '.'
+import TagInputsList from '.'
 
 const list = [
 
 ]
 
-const wrap = (props = {}) => shallow(<TagsInputsList list={list} {...props} />)
+const wrap = (props = {}) => shallow(<TagInputsList list={list} {...props} />)
 
 it('renders props when passed in', () => {
   const wrapper = wrap({ id: 'foo' })

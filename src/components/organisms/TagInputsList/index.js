@@ -13,9 +13,10 @@ const TagsInputsList = ({ list, loading, ...props }) => {
   return (
     <Wrapper {...props}>
       {list.map((tagInput, idx) => (
-          <TagsInputs key={'itemInputs-'+idx} indexNumber={idx} {...tagInput} />
+            <TagsInputs key={'itemInputs-'+idx} indexNumber={idx} {...tagInput} />
+          )
         )
-      )}
+      }
       <TagsInputs key={'itemInputs-'+list.length} indexNumber={list.length} />
       <Button>Add Tag</Button>
     </Wrapper>
