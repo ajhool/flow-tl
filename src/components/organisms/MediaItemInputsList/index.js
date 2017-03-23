@@ -9,19 +9,19 @@ const Wrapper = styled.div`
   }
 `
 
-const MediaItemInputsList = ({ list, loading, ...props }) => {
+const MediaItemInputsList = ({ addItem, list, ...props }) => {
   return (
     <Wrapper {...props}>
       {list.map((mediaItemInput, idx) => <MediaItemInputs key={'itemInputs-'+idx} indexNumber={idx} {...mediaItemInput} />)}
       <MediaItemInputs key={'itemInputs-'+list.length} indexNumber={list.length} />
-      <Button>Add Media</Button>
+      <Button onClick={addItem}>Save Item</Button>
     </Wrapper>
   )
 }
 
 MediaItemInputsList.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object).isRequired,
-  loading: PropTypes.bool,
+  addItem: PropTypes.func.isRequired
 }
 
 export default MediaItemInputsList

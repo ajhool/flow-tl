@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Field } from 'redux-form'
 import styled from 'styled-components'
+import DatePicker from 'material-ui/DatePicker';
+import TextField from 'material-ui/TextField';
 
 import { ReduxField, Heading, Button, MediaItemInputsList, TagInputsList } from 'components'
 
@@ -11,16 +13,49 @@ const Form = styled.form`
 `
 
 const PostForm = ({ handleSubmit, submitting }) => {
+
+  handleChangeStartDate = (event, date) => {
+    this.setState({
+      startDate: date,
+    });
+  }
+
+  handleChangeEndDate = (event, date) => {
+    this.setState({
+      endDate: date,
+    });
+  }
+
   return (
     <Form method="POST" onSubmit={handleSubmit}>
       <Heading level={2}>Create a post</Heading>
       <Field name="_csrf" type="hidden" component="input" />
       <Field name="title" label="Title" component={ReduxField} />
       <Field name="body" label="Body" type="textarea" component={ReduxField} />
-      <Field name="startDate" label="Start Date" component={ReduxField} />
-      <Field name="endDate" label="End Date" component={ReduxField} />
-      {<MediaItemInputsList list={[]}></MediaItemInputsList>}
-      {<TagInputsList list={[]}></TagInputsList>}
+      <TextField
+        id="text-field-controlled"
+        value={this.state.startDate}
+        name="startDate"
+      />
+      <DatePicker
+        onChange={this.handleChangeStartDate}
+        autoOk={this.state.autoOk}
+        floatingLabelText="Start Date"
+        defaultDate={this.state.startDate}
+      />
+      <TextField
+        id="text-field-controlled"
+        value={this.state.endDate}
+        name="endDate"
+      />
+      <DatePicker
+        onChange={this.handleChangeEndDate}
+        autoOk={this.state.autoOk}
+        floatingLabelText="End Date"
+        defaultDate={this.state.endDate}
+      />
+      <MediaItemInputsList list={[]}></MediaItemInputsList>
+      <TagInputsList list={[]}></TagInputsList>
       <Button type="submit" disabled={submitting}>Create</Button>
     </Form>
   )

@@ -10,8 +10,9 @@ const Form = styled.form`
   padding: 1rem;
 `
 
-const MediaItemInputs = ({indexnumber, keyword, score}) => {
+const TagInputs = ({indexnumber, keyword, score}) => {
   const arrayLabel = "tags[item-" + indexnumber + "]"
+
   return (
     <div>
       <Field name={arrayLabel+"[keyword]"} label="Keyword" component={ReduxField} />
@@ -20,9 +21,9 @@ const MediaItemInputs = ({indexnumber, keyword, score}) => {
   )
 }
 
-MediaItemInputs.propTypes = {
+TagInputs.propTypes = {
   keyword: PropTypes.string,
   score: PropTypes.number
 }
 
-export default MediaItemInputs
+export default TagInputs
