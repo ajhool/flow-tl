@@ -3,6 +3,11 @@ import { configure, addDecorator } from '@kadira/storybook'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+import muiTheme from 'components/themes/muiTheme'
+
 import configureStore from 'store/configure'
 import theme from 'components/themes/default'
 
@@ -15,7 +20,9 @@ function loadStories() {
 
 addDecorator(story => (
   <Provider store={store}>
-    <ThemeProvider theme={theme}>{story()}</ThemeProvider>
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <ThemeProvider theme={theme}>{story()}</ThemeProvider>
+    </MuiThemeProvider>
   </Provider>
 ))
 
