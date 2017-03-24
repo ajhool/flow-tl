@@ -14,6 +14,18 @@ storiesOf('CardPost', module)
         mediaLink:"http://bigstory.ap.org/article/9b3998b11d814f1abec39e042afe12bd/apnewsbreak-illinois-governor-seeks-prison-tower-cameras",
         agencyName:"Associated Press",
         agencyLink:"https://www.ap.org/en-us/"
+      },
+      {
+        title:"Illinois governor seeks prison tower cameras",
+        mediaLink:"http://bigstory.ap.org/article/9b3998b11d814f1abec39e042afe12bd/apnewsbreak-illinois-governor-seeks-prison-tower-cameras",
+        agencyName:"Associated Press",
+        agencyLink:"https://www.ap.org/en-us/"
+      },
+      {
+        title:"Illinois governor seeks prison tower cameras",
+        mediaLink:"http://bigstory.ap.org/article/9b3998b11d814f1abec39e042afe12bd/apnewsbreak-illinois-governor-seeks-prison-tower-cameras",
+        agencyName:"Associated Press",
+        agencyLink:"https://www.ap.org/en-us/"
       }]}
       tags={[
         {

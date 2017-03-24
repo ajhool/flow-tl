@@ -13,24 +13,28 @@ const MediaItemList = ({ list, loading, ...props }) => {
   return (
     <Wrapper {...props}>
       {loading && <div>Loading</div>}
-      {
-        /*
-        list.map(mediaItem => {
-          switch(mediaItem.mediaType){
-            case 'WEB_LINK':
-              return (<MediaWebLink key={mediaItem.id} mediaItem {...mediaItem}></MediaWebLink>)
-            case 'YT_LINK':
-              //TODO:
-              return
-            default:
-              return null
-          }
-        })
-        */
-        list.map(mediaItem => {
-          return (<MediaWebLink key={mediaItem.id} mediaItem {...mediaItem}></MediaWebLink>)
-        })
-      }
+      <div>
+        <h3>Web Links</h3>
+        {
+          /*
+          list.map(mediaItem => {
+            switch(mediaItem.mediaType){
+              case 'WEB_LINK':
+                return (<MediaWebLink key={mediaItem.id} mediaItem {...mediaItem}></MediaWebLink>)
+              case 'YT_LINK':
+                //TODO:
+                return
+              default:
+                return null
+            }
+          })
+          */
+
+          list.map(mediaItem => {
+            return (<MediaWebLink key={mediaItem.id} mediaItem {...mediaItem}></MediaWebLink>)
+          })
+        }
+      </div>
     </Wrapper>
   )
 }

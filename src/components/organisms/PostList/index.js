@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import styled from 'styled-components'
 
-import { Post } from 'components'
+import { CardPost } from 'components'
 
 const Wrapper = styled.div`
   & > * {
@@ -13,7 +13,7 @@ const PostList = ({ list, loading, ...props }) => {
   return (
     <Wrapper {...props}>
       {loading && <div>Loading</div>}
-      {list.map(post => <Post key={post.id} loading={loading} {...post} />)}
+      {list.map(post => <CardPost key={post.id} loading={loading} {...post} />)}
     </Wrapper>
   )
 }

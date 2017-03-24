@@ -33,10 +33,8 @@ const MediaWebLink = ({ icon, title, mediaLink, agencyName, agencyLink, children
     <Wrapper {...props}>
       {icon && <StyledIcon icon={icon} height={64} />}
       <Text>
-        <Heading level={2}>
-          {agencyLink ? <Link href={agencyLink}>{agencyName}</Link> : agencyName}
-        </Heading>
         <Link href={mediaLink}>{title}</Link>
+        {'  (' + agencyName + ')'}
       </Text>
     </Wrapper>
   )

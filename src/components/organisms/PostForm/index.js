@@ -12,7 +12,7 @@ const Form = styled.form`
   padding: 1rem;
 `
 
-const PostForm = ({ handleChangeStartDate, handleChangeEndDate, handleSubmit, submitting }) => {
+const PostForm = ({ mediaList, tagList, handleChangeStartDate, handleChangeEndDate, handleSubmit, submitting }) => {
   return (
     <Form method="POST" onSubmit={handleSubmit}>
       <Heading level={2}>Create a post</Heading>
@@ -41,8 +41,8 @@ const PostForm = ({ handleChangeStartDate, handleChangeEndDate, handleSubmit, su
         floatingLabelText="End Date"
         defaultDate={this.state.endDate}
       />
-      <MediaItemInputsList list={[]}></MediaItemInputsList>
-      <TagInputsList list={[]}></TagInputsList>
+      <MediaItemInputsList onMediaListChange={onMediaListChange} list={mediaList}></MediaItemInputsList>
+      <TagInputsList onTagListChange={onTagListChange} list={tagList}></TagInputsList>
       <Button type="submit" disabled={submitting}>Create</Button>
     </Form>
   )

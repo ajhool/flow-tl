@@ -16,7 +16,7 @@ export default class CardPost extends React.Component {
     };
   }
 
-  propTypes = {
+  static propTypes = {
     title: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
     startDate: PropTypes.string.isRequired,
@@ -43,15 +43,15 @@ export default class CardPost extends React.Component {
   };
 
   render() {
-    const startDateStr = moment(this.props.startDate).format('MM-DD-YY, h:mm:ss a');
+    const startDateStr = moment(this.props.startDate).format('MMM DD, YYYY, h:mm a');
 
     return (
       <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
-        <CardTitle title={this.props.title} subtitle={'(' + startDateStr + ')'} expandable={true} />
+        <CardTitle title={this.props.title} subtitle={'(' + startDateStr + ')'} />
         <CardText>
-          <div>{this.props.body}</div>
-          <MediaItemList list={this.props.media}></MediaItemList>
-          <TagList list={this.props.tags}></TagList>
+          <div>
+            {this.props.body}
+          </div>
           <Toggle
             toggled={this.state.expanded}
             onToggle={this.handleToggle}
@@ -59,13 +59,14 @@ export default class CardPost extends React.Component {
             label="This toggle controls the expanded state of the component."
           />
         </CardText>
-        <CardMedia
-          expandable={true}
-          overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-        >
+        <CardText expandable={true}>
+          <MediaItemList list={this.props.media}></MediaItemList>
+          <TagList list={this.props.tags}></TagList>
+        </CardText>
+        <CardMedia expandable={true}>
           <img src="images/nature-600-337.jpg" />
         </CardMedia>
       </Card>
-    );
+    )
   }
 }

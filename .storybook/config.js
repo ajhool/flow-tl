@@ -4,11 +4,10 @@ import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
-import muiTheme from 'components/themes/muiTheme'
+import injectTapEventPlugin from 'react-tap-event-plugin'
 
 import configureStore from 'store/configure'
+import muiTheme from 'components/themes/muiTheme'
 import theme from 'components/themes/default'
 
 const store = configureStore({})

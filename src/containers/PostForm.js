@@ -39,6 +39,17 @@ const handleChangeEndDate = (event, date) => {
   });
 }
 
+const onTagListChange = (tagList) => {
+  this.setState({
+    tagList: tagList
+  })
+}
+
+const onMediaListChange = (mediaList) => {
+  this.setState({
+    mediaList: mediaList
+  })
+}
 
 export const config = {
   form: 'PostForm',
